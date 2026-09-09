@@ -33,6 +33,14 @@ def show_word(word, guessed):
     return result.strip()
 
 
+def word_complete(word, guessed):
+    # True αν όλα τα γράμματα της λέξης έχουν βρεθεί.
+    for letter in word:
+        if letter not in guessed:
+            return False
+    return True
+
+
 def play():
     word = pick_word()
     guessed = []
@@ -59,7 +67,7 @@ def play():
             mistakes += 1
             print("Λάθος!")
 
-        if all(letter in guessed for letter in word):
+        if word_complete(word, guessed):
             print()
             print("Μπράβο! Η λέξη ήταν:", word)
             return True
