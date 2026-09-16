@@ -4,7 +4,7 @@
 
 import random
 
-WORDS = ["python", "github", "codespace", "commit", "variable", "function"]
+WORDS = ["robotonio", "python", "github", "codespace", "commit", "variable", "function"]
 MAX_MISTAKES = 6
 
 STAGES = [
