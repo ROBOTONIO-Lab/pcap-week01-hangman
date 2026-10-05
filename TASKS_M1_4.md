@@ -1,11 +1,15 @@
 # TASKS M1.4 — Η κρεμάλα με χρώματα (pip)
 
-Το τελευταίο βήμα του Module 1. Η κρεμάλα χρησιμοποιεί ένα πακέτο που έγραψαν άλλοι: το `rich`.
+Το τελευταίο βήμα του Module 1. Το `hangman.py` του repo σου παίρνει χρώματα με ένα πακέτο που έγραψαν άλλοι: το `rich`.
 
 Κανόνες:
 - Codespace, terminal.
 - Οι ερωτήσεις με ✎ απαντιούνται στο `NOTES.md`, κάτω από `## M1.4`.
-- **Ποτέ** Upload files από τη σελίδα του GitHub στο δικό σου repo. Όλα από το Codespace. Αν δούλεψες και αλλού, πρώτα Sync Changes.
+- **Ποτέ** Upload files από τη σελίδα του GitHub στο δικό σου repo. Όλα από το Codespace.
+
+## Βήμα 0 — Checkpoint
+
+`python hangman.py` → παίζει. Ένα γράμμα, `Ctrl + C`.
 
 ## Βήμα 1 — Τι υπάρχει ήδη
 
@@ -27,15 +31,15 @@
 
 ## Βήμα 3 — Χρώματα
 
-Στο `game.py`, κάτω από τα άλλα import: `from rich import print`
+Στο `hangman.py`, κάτω από το `import random`: `from rich import print`
 
 Μετά χρωμάτισε με markup `[χρώμα]...[/χρώμα]`:
+- τον τίτλο «ΚΡΕΜΑΛΑ» έντονο κίτρινο (`bold yellow`)
 - την κρεμάλα (`STAGES[...]`) κίτρινη, και στα δύο σημεία που τυπώνεται
-- το «Σωστά!» έντονο πράσινο (`bold green`)
-- το «Λάθος!» έντονο κόκκινο
+- το «Σωστά!» έντονο πράσινο, το «Λάθος!» έντονο κόκκινο
 - το «Μπράβο!» πράσινο, το «Κρεμάστηκες...» κόκκινο
 
-Έλεγχος: `python game.py` → παίζεις με χρώματα.
+Έλεγχος: `python hangman.py` → παίζεις με χρώματα.
 
 ✎ Τι έκανε η γραμμή `from rich import print` στο όνομα `print` του αρχείου σου;
 
@@ -51,9 +55,9 @@
 
 ## Βήμα 5 (σπίτι) — Απόδειξη
 
-`pip uninstall rich` (πάτα `y`) → `python game.py` → τι σφάλμα;
+`pip uninstall rich` (πάτα `y`) → `python hangman.py` → τι σφάλμα;
 
-`pip install -r requirements.txt` → `python game.py` → δουλεύει;
+`pip install -r requirements.txt` → `python hangman.py` → δουλεύει;
 
 ✎ Πότε θα χρειαστείς την εντολή `pip install -r requirements.txt` στην πράξη;
 
@@ -62,25 +66,16 @@
 Τρέξε καθεμία και γράψε σε μία γραμμή τι κάνει:
 
 - `pip install -U rich`
+- `pip install rich==13.0.0` → `pip show rich` → τι άλλαξε στο `Requires`;
+- `pip install -U rich` (πίσω στη νεότερη)
 - `pip help install`
-- `pip list` μετά το uninstall και μετά το install ξανά (τι άλλαξε;)
 
-✎ Τι κάνει το `-U`; Τι κάνει το `--user`; (το δεύτερο χωρίς να το τρέξεις· από το `pip help install`)
+✎ Τι κάνει το `-U`; Τι κάνει το `--user`; (το δεύτερο από το `pip help install`, χωρίς να το τρέξεις)
 
 Άνοιξε στον browser `https://pypi.org/project/rich/`.
 
 ✎ Ποια είναι η πιο πρόσφατη έκδοση του rich στο PyPI; Είναι ίδια με τη δική σου;
 
-## Τελική κατάσταση
-
-```
-.gitignore
-game.py
-requirements.txt
-hangman/
-NOTES.md
-```
-
 ## Bonus
 
-Το `rich` έχει και πίνακες. Στο τέλος της `main()`, αντί για το «Ποσοστό επιτυχίας», τύπωσε έναν πίνακα με στήλες «Γύρος», «Λέξη», «Αποτέλεσμα». Ξεκίνα από εδώ: `https://rich.readthedocs.io/en/stable/tables.html`
+Το `rich` έχει και πίνακες. Στο τέλος του παιχνιδιού τύπωσε έναν πίνακα με δύο στήλες: «Γράμμα» και «Σωστό/Λάθος», για κάθε γράμμα που μάντεψες. Ξεκίνα από εδώ: `https://rich.readthedocs.io/en/stable/tables.html`
